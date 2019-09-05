@@ -2,7 +2,7 @@ package com.simon.component;
 
 import android.app.Application;
 
-import com.simon.componentlib.IAppInit;
+import com.simon.componentlib.IAppInitialization;
 import com.simon.componentlib.config.AppConfig;
 
 public class MainApplication extends Application {
@@ -18,8 +18,8 @@ public class MainApplication extends Application {
             try {
                 Class<?> clazz = Class.forName(component);
                 Object instance = clazz.newInstance();
-                if (instance instanceof IAppInit) {
-                    ((IAppInit) instance).initializa(this);
+                if (instance instanceof IAppInitialization) {
+                    ((IAppInitialization) instance).initialization(this);
                 }
             } catch (Exception e) {
                 e.printStackTrace();

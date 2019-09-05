@@ -2,10 +2,10 @@ package com.simon.minecomponent;
 
 import android.app.Application;
 
-import com.simon.componentlib.IAppInit;
+import com.simon.componentlib.IAppInitialization;
 import com.simon.componentlib.ServiceFactory;
 
-public class MineApplication extends Application implements IAppInit {
+public class MineApplication extends Application implements IAppInitialization {
 
     private static Application application;
 
@@ -19,7 +19,7 @@ public class MineApplication extends Application implements IAppInit {
     }
 
     @Override
-    public void initializa(Application application) {
+    public void initialization(Application application) {
         this.application = application;
         ServiceFactory.getInstance().setmMine(new MineService());
 

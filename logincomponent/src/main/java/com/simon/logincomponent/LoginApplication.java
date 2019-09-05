@@ -2,10 +2,10 @@ package com.simon.logincomponent;
 
 import android.app.Application;
 
-import com.simon.componentlib.IAppInit;
+import com.simon.componentlib.IAppInitialization;
 import com.simon.componentlib.ServiceFactory;
 
-public class LoginApplication extends Application implements IAppInit {
+public class LoginApplication extends Application implements IAppInitialization {
 
     private static Application application;
 
@@ -15,7 +15,7 @@ public class LoginApplication extends Application implements IAppInit {
 
 
     @Override
-    public void initializa(Application application) {
+    public void initialization(Application application) {
         this.application = application;
         ServiceFactory.getInstance().setmLogin(new LoginService());
 
